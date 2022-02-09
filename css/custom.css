@@ -1,0 +1,397 @@
+/* Home Section */
+.custom-content {
+  top: -85%;
+  height: 50%;
+  background: transparent;
+}
+
+/* Posts Section */
+.list-content {
+  top: -80%;
+}
+
+.posts-container {
+  margin-top: -50vh;
+}
+
+.list-post-container {
+  margin-top: -70vh;
+}
+
+.custom-single-post {
+  position: relative;
+  margin-top: -100vh;
+}
+
+.custom-single-post .read-area {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.custom-single-post .hero-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  margin: 0;
+  padding: 0;
+}
+
+.custom-single-post .page-content-margin-top {
+  /* margin-top: 400px; */
+}
+
+.author-profile {
+  /* position: absolute; */
+  /* right: 0; */
+}
+
+.custom-author-name {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.custom-date {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.custom-single-post {
+  text-align: justify;
+}
+
+.custom-single-post pre {
+  margin: 10px 0;
+  padding: 20px;
+  background-color: #e5e9f2;
+  border-radius: 10px;
+}
+
+.strong {
+  font-weight: 900;
+}
+
+.custom-single-post .figure-audio {
+  border: none;
+}
+
+/* Custom Single Page */
+.custom-single-page {
+  position: relative;
+  margin-top: -90vh;
+}
+
+.custom-single-page .read-area {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.custom-single-page .hero-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  margin: 0;
+  padding: 0;
+}
+
+.custom-single-page .page-content {
+  top: 0;
+  /* margin-top: 400px; */
+}
+
+.theme-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 0;
+
+  line-height: 1;
+  color: #1c2d41;
+  cursor: pointer;
+}
+
+.initial-navbar .theme-toggler {
+  color: #c0ccda;
+}
+
+.initial-navbar .theme-toggler:hover {
+  color: #f9fafc;
+  transition: all 0.3s ease-out;
+}
+
+.final-navbar .theme-toggler {
+  color: #1c2d41;
+}
+
+.navbar-collapse.collapsing,
+.navbar-collapse.show {
+  padding-left: 0;
+  margin-top: 0;
+  margin-left: 50%;
+  border-radius: 10px 0 10px 10px;
+}
+
+
+/* Fix In Page Anchors */
+:target {
+  /* content: ""; */
+  display: inline-block;
+  padding-top: 80px; /* fixed header height*/
+  margin-top: -80px; /* negative fixed header height */
+}
+
+
+/* TOC Sidebar */
+.toc-section {
+  position: fixed;
+  top: 50vh;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.toc-section .toc-toggle {
+  position: absolute;
+  top: 1.2rem;
+  left: -50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 48px;
+  width: 48px;
+
+  font-size: 40px;
+
+  background-color: #ffffff;
+  border-radius: 50%;
+  
+  transition: all 800ms;
+  cursor: pointer;
+}
+
+.toc-holder {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.toc {
+
+}
+
+.toc-section.hide {
+  transform: translateY(-50%) translateX(100%);
+}
+
+.toc-section.hide .toc-toggle {
+  transform: rotate(180deg);
+  transition: all 800ms;
+}
+
+@media (max-width: 1024px) {
+  .custom-single-post .page-content-margin-top {
+    margin-top: 300px;
+  }
+
+  .toc-holder {
+    display: none;
+  }
+  .toc-section .toc-toggle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .custom-single-post .page-content-margin-top {
+    margin-top: 200px;
+  }
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #1c2d41;
+}
+
+/* Dark Theme: Navbar */
+.dark-theme .initial-navbar .theme-toggler,
+.dark-theme .final-navbar .theme-toggler {
+  color: #c0ccda;
+}
+
+.dark-theme .final-navbar {
+  color: #a9a9b3;
+  background-color: #232425;
+}
+
+.dark-theme .final-navbar .navbar-brand {
+  color: #a9a9b3;
+}
+
+.dark-theme .final-navbar li a {
+  color: #a9a9b3;
+}
+
+.dark-theme .navbar-collapse.show,
+.dark-theme .navbar-collapse.collapsing {
+  background-color: #232425;
+}
+
+.dark-theme .navbar-collapse.show li a,
+.dark-theme .navbar-collapse.collapsing li a{
+  color: #a9a9b3;
+}
+
+/* Dark Theme Index Page */
+.dark-theme .home img {
+  background-color: #292a2d;
+}
+
+.dark-theme .home .greeting,
+.dark-theme .home .typing-carousel {
+  color: #a9a9b3;
+}
+
+.dark-theme .posts-container .card,
+.dark-theme .posts-container .card-footer {
+  background-color: #292a2d;
+}
+
+.dark-theme .posts-container .card h1,
+.dark-theme .posts-container .card h2,
+.dark-theme .posts-container .card h3,
+.dark-theme .posts-container .card h4,
+.dark-theme .posts-container .card h5 {
+  color: #a9a9b3;
+}
+
+.dark-theme .posts-container .card p {
+  color: #a9a9b3;
+}
+
+/* Dark Theme Single Posts */
+.dark-theme .read-area {
+  background-color: #292a2d;
+}
+
+.dark-theme .read-area p {
+  color: #a9a9b3;
+}
+
+.dark-theme .read-area .post-content {
+  color: #a9a9b3;
+}
+
+.dark-theme .read-area h1,
+.dark-theme .read-area h2,
+.dark-theme .read-area h3,
+.dark-theme .read-area h4,
+.dark-theme .read-area h5 {
+  color: #a9a9b3;
+}
+
+.dark-theme .read-area p {
+  color: #a9a9b3;
+}
+
+.dark-theme .read-area strong {
+  color: #a9a9b3 !important;
+  font-weight: bold;
+}
+
+.dark-theme .read-area blockquote,
+.dark-theme .read-area cite {
+  color: #a9a9b3;
+}
+
+.dark-theme .read-area a {
+  color: #a9a9b3;
+  text-decoration: underline;
+}
+
+.dark-theme .read-area li {
+  color: #a9a9b3;
+}
+
+.dark-theme .read-area hr {
+  border-color: #a9a9b3;
+}
+
+.dark-theme .read-area pre {
+  background-color: #272822;
+}
+
+.dark-theme .read-area table thead tr {
+  background-color: #4e4e57;
+  border: 1px solid #4e4e57;
+  color: #a9a9b3;
+}
+.dark-theme .read-area table thead tr th {
+  border: 1px solid #4e4e57;
+}
+
+.dark-theme .read-area table tbody tr {
+  background-color: #292a2d;
+  border: 1px solid #4e4e57;
+  color: #a9a9b3;
+}
+.dark-theme .read-area table tbody tr th {
+  border: 1px solid #4e4e57;
+}
+
+.dark-theme .read-area .alert strong {
+  color: #1c2d41 !important;
+}
+
+.dark-theme .author-profile img {
+  background-color: #292a2d;
+}
+
+/* Dark Theme: TOC Sidebar */
+.dark-theme .toc-holder {
+  background-color: #232425;
+}
+
+.dark-theme .toc-holder h5 {
+  color: #a9a9b3;
+}
+
+.dark-theme .toc-holder hr {
+  border-color: #a9a9b3;
+}
+
+.dark-theme .toc-section .toc-toggle {
+  color: #a9a9b3;
+  background-color: #232425;
+}
+
+.min-vh-50 { min-height: 50vh; }
+
+.top-0 { top: 0; }
+.right-0 { right: 0; }
+
+/* Collapse Shortcode */
+.collapseAnchor {
+  text-decoration:none;
+}
+/* Might want to redo something similar to ensure the arrows look right */
+/*.collapseAnchor:after {
+  content:"\25B2";
+  display:inline-block;
+  padding:0.4em 0 0 0.3em;
+  vertical-align:top;
+  font-size:0.625em;
+}
+.collapseWrap.closed + .collapseAnchor:after {
+  content:"\25BC";
+}
+*/
+.collapseWrap.closed > .hugo-collapse-below {
+  position:absolute;
+  top:-999em;
+  left:-999em;
+}
