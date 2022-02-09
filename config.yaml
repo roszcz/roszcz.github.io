@@ -28,7 +28,7 @@ params:
   author:
     name: "tomek"
     image: "/images/douple-p.gif"
-    blogname: "quasiscientific garbage"
+    blogname: "quasi-scientific garbage"
 
   socialLinks:   
     - name: "Email"
