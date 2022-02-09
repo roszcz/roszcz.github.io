@@ -7,7 +7,7 @@ summary: "Reviewing blog functionality"
 
 ## Emojis!
 
-:heart: :tada:
+:heart: :tada: :thinking:
 
 ## Equations!
 
