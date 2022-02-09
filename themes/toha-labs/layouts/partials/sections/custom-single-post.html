@@ -1,0 +1,54 @@
+<div class="container-fluid anchor pb-5 recent-posts-section custom-single-post">
+  <div class="container read-area">
+    <!--Hero Area-->
+    {{ with .Params.headerImage }}
+    <div class="hero-area col-sm-12" id="hero-area" style='background-image: url({{ strings.TrimSuffix "/" site.BaseURL }}{{ partial "helpers/get-hero.html" . }});'>
+    </div>
+    {{ end }}
+    <div class="page-content {{ if .Params.headerImage }} page-content-margin-top {{ end }}">
+      <div class="author-profile ml-auto align-self-lg-center d-md-none">
+        <img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image">
+        <div class="">
+          <h5 class="author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
+          <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
+        </div>
+      </div>
+      <div class="d-flex pt-md-4">
+        <div class="title col-8 mr-auto text-left"> <h1> {{ .Title }} </h1> </div>
+        <div class="d-none d-md-flex col-4 align-items-center justify-content-end">
+          <img class="rounded-circle mr-3" src='{{ partial "helpers/get-author-image.html" . }}' alt="Author Image" width="50" height="50">
+          <div class="text-right">
+            <h5 class="author-name custom-author-name">{{ partial "helpers/get-author-name.html" . }}</h5>
+            <p class="custom-date">{{ .Page.Date.Format "January 2, 2006" }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="post-content" id="post-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+  <div class="toc-section" id="toc-section">
+    {{ if and site.Params.enableTOC .Params.enableTOC }}
+    <span class="toc-toggle" onclick="toggleTOC()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </span>
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">{{ i18n "toc_heading" }}</h5>
+      <hr>
+      <div class="toc">
+        {{ .TableOfContents }}
+      </div>
+    </div>
+    <script>
+      function toggleTOC() {
+        const tocSection =  document.getElementById('toc-section');
+        tocSection.classList.toggle('hide');
+      }
+    </script>
+    {{ end }}
+  </div>
+</div>

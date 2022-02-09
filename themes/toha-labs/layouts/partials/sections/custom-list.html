@@ -1,0 +1,10 @@
+<div class="container-fluid recent-posts-section">
+  <div class="container posts-container list-post-container">
+    {{ .RegularPages }}
+    <div class="row">
+      {{ range .RegularPages }}
+        {{ partial "cards/custom-post.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>

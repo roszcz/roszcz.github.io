@@ -1,0 +1,9 @@
+<div class="container-fluid recent-posts-section">
+  <div class="container posts-container">
+    <div class="row">
+      {{ range (where site.RegularPages.ByDate.Reverse "Type" "in" "posts" )}}
+        {{ partial "cards/custom-post.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>

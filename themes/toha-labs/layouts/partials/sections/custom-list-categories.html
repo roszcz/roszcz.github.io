@@ -1,0 +1,9 @@
+<div class="container-fluid recent-posts-section min-vh-50">
+  <div class="container posts-container">
+    <div class="row">
+      {{ range site.Taxonomies.categories }}
+        {{ partial "cards/custom-taxonomy.html" .Page }}
+      {{ end }}
+    </div>
+  </div>
+</div>

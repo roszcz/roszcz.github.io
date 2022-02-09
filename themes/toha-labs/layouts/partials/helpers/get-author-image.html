@@ -1,0 +1,14 @@
+{{ $author:= site.Data.author }}
+{{ if site.Params.author }}
+  {{ $author = site.Params.author }}
+{{ end }}
+
+{{/* default author image */}}
+{{ $authorImage:= "/images/default-avatar.png" }}
+{{ if $author.image }}
+  {{ $authorImage = $author.image }}
+{{ end }}
+
+{{/*  return the author image link  */}}
+{{ return $authorImage }}
+

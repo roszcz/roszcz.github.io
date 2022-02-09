@@ -1,0 +1,27 @@
+<div class="container-fluid anchor pb-5 recent-posts-section custom-single-page">
+  <div class="container read-area">
+    <!--Hero Area-->
+    
+    <div class="page-content">
+      <div class="title"> <h1> {{ .Title }} </h1> </div>
+      <div class="text-container mx-auto">
+        <ul class="social-link d-flex justify-content-center">
+          {{ range site.Params.socialLinks }}
+          <li>
+            {{ if eq .name "Email" }}
+              <a href="mailto:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ else if eq .name "Phone" }}
+              <a href="tel:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ else }}
+              <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="post-content" id="post-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>

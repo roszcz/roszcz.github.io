@@ -1,0 +1,57 @@
+{{ $backgroundImage:= "/images/default-background.jpg" }}
+{{ if site.Params.background }}
+  {{ $backgroundImage = site.Params.background }}
+{{ end }}
+
+{{/* get file that matches the filename as specified as src="" in shortcode */}}
+{{ $src := resources.Get $backgroundImage }}
+
+{{/* set image sizes, these are hardcoded for now, x dictates that images are resized to this width */}}
+
+{{ $tinyw := default "500x" }}
+{{ $smallw := default "800x" }}
+{{ $mediumw := default "1200x" }}
+{{ $largew := default "1500x" }}
+
+{{/* resize the src image to the given sizes */}}
+
+{{ $tiny := $src.Resize $tinyw }}
+{{ $small := $src.Resize $smallw }}
+{{ $medium := $src.Resize $mediumw }}
+{{ $large := $src.Resize $largew }}
+
+{{/* only use images smaller than or equal to the src (original) image size, as Hugo will upscale small images */}}
+{{/* set the sizes attribute to (min-width: 35em) 1200px, 100vw unless overridden in shortcode */}}
+
+{{ if lt $src.Width "500" }}
+  {{ $tiny := $src}}
+  {{ $small := $src}}
+  {{ $medium := $src}}
+  {{ $large := $src}}
+{{ end }}
+
+{{ if lt $src.Width "800" }}
+  {{ $small := $src}}
+  {{ $medium := $src}}
+  {{ $large := $src}}
+{{ end }}
+
+{{ if lt $src.Width "1200" }}
+  {{ $medium := $src}}
+  {{ $large := $src}}
+{{ end }}
+
+{{ if lt $src.Width "1500" }}
+  {{ $large := $src}}
+{{ end }}
+
+<div class="container-fluid home" id="home">
+    <span class="on-the-fly-behavior"></span>
+  <div
+    id="homePageBackgroundImageDivStyled"
+    class="background container-fluid"
+  ></div>
+  <div class="container content text-center list-content">
+    <h1 class="greeting">{{ .Title }}</h1>
+  </div>
+</div>
